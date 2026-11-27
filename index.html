@@ -1,33 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex">
-<title>AR名刺（準備中）</title>
-<!-- 名刺のARができたら、このページをARのページに入れ替える（URLは変わらない） -->
-<style>
-  :root { --bg: #f4f2f0; --card: #ffffff; --ink: #2a2526; --muted: #6b6264; --line: #e3ddd9; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #141213; --card: #1f1c1d; --ink: #f1ecea; --muted: #b8adab; --line: #3a3334; }
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; min-height: 100%; }
-  body { min-height: 100dvh; display: flex; align-items: center; justify-content: center; padding: 24px 16px;
-    background: var(--bg); color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif; }
-  main { width: 100%; max-width: 420px; padding: 40px 24px; text-align: center; line-height: 1.9;
-    background: var(--card); border: 1px solid var(--line); border-radius: 20px; }
-  .icon { font-size: 40px; line-height: 1; margin-bottom: 16px; }
-  h1 { margin: 0 0 16px; font-size: 22px; line-height: 1.6; }
-  p { margin: 0; font-size: 16px; color: var(--muted); }
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>喋る名刺 石川さん</title>
+    <link rel="preconnect" href="https://aframe.io">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <link rel="stylesheet" href="js/ar-core.css">
 </head>
+
 <body>
-  <main>
-    <div class="icon" aria-hidden="true">📇</div>
-    <h1>AR名刺は<br>ただいま準備中です</h1>
-    <p>もうしばらくお待ちください。</p>
-  </main>
+    <script>
+        window.AR_CONFIG = {
+
+            video: 'assets/videos/sayuri_light.mp4',
+
+            // 横の名刺の縦横比（ターゲットの画像 1075 × 650 から）
+            width: 1,
+            height: 0.605,
+
+            // 仮の文。石川さん用の文が決まったら入れ替える
+            intro: 'はじめまして！<br>名刺から、ごあいさつします',
+            message: 'カメラを準備しています…<br>準備ができたら名刺をかざしてください',
+
+            links: [
+                { icon: 'assets/images/icon_home.png',  url: 'https://www.office-grande.com/' },
+                { icon: 'assets/images/icon_fb.png',    url: 'https://www.facebook.com/share/1JGr3WQ4Wx/' },
+                { icon: 'assets/images/icon_insta.png', url: 'https://www.instagram.com/sayuri.ishikawa0322' }
+            ],
+
+            debug: false
+
+        };
+    </script>
+    <script src="js/ar-core.js"></script>
 </body>
+
 </html>

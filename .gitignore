@@ -1,1 +1,4 @@
 .DS_Store
+
+# 元の動画（約13MB）はパソコンにだけ残す
+assets/videos/sayuri.mp4
